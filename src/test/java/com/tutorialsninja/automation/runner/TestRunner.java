@@ -2,15 +2,16 @@ package com.tutorialsninja.automation.runner;
 
 import org.junit.runner.RunWith;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features={"classpath:FeatureFiles/search.feature"},
-glue={"classpath:com.tutorialsninja.automation.stepdef"},
-plugin={"html:target/cucumber_html_report"})
-//tags={"@Register","@One"})
-
+@CucumberOptions(
+        features = "classpath:FeatureFiles/search.feature",
+        glue = "com.tutorialsninja.automation.stepdef",
+        plugin = {"html:target/cucumber-html-report"},
+        monochrome = true
+        // tags = "@Register or @One"  // Uncomment and modify as needed
+)
 public class TestRunner {
-
 }
